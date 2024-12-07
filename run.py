@@ -33,6 +33,7 @@ if __name__ == '__main__':
     logger.info(f"LGBM params: {lgbm_params}")
 
     # 学習用データ作成
+    # 作った特徴量についてここでconcatする
     X = train[features]
     y = train[target_name].values
     X_test = test[features]
@@ -48,12 +49,13 @@ if __name__ == '__main__':
         shuffle=True,
         early_stopping_rounds=100,
         num_boost_round=1000,
-        loss=loss
+        loss=loss,
+        logger=logger
     )
 
     # ログ出力(最終スコア)
-    logger.info(f"Overall AUC: {overall_auc:.4f}")
-    logger.info(f"Overall {loss}: {overall_logloss:.4f}")
+    # logger.info(f"Overall AUC: {overall_auc:.4f}")
+    # logger.info(f"Overall {loss}: {overall_logloss:.4f}")
 
     # 提出ファイル作成
     now = datetime.now().strftime('%Y-%m-%d-%H-%M')
