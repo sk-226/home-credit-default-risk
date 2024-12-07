@@ -1,0 +1,22 @@
+{
+  "features": [
+    "NAME_CONTRACT_TYPE", 
+    "AMT_INCOME_TOTAL", 
+    "EXT_SOURCE_2", 
+    "OWN_CAR_AGE", 
+    "ORGANIZATION_TYPE"
+  ],
+  "lgbm_params": {
+    "learning_rate": 0.1,
+    "num_leaves": 8,
+    "boosting_type": "gbdt",
+    "colsample_bytree": 0.65,
+    "reg_alpha": 1,
+    "reg_lambda": 1,
+    "objective": "binary"
+  },
+  "loss": "binary_logloss",
+  "target_name": "TARGET",
+  "ID_name": "SK_ID_CURR"
+}
+
