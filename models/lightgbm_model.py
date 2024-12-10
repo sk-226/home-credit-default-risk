@@ -1,7 +1,11 @@
 import numpy as np
+import pandas as pd
 import lightgbm as lgb
 from sklearn.model_selection import StratifiedKFold
-from sklearn.metrics import roc_auc_score, log_loss
+from sklearn.metrics import roc_auc_score, log_loss, roc_curve
+import matplotlib.pyplot as plt
+from datetime import datetime 
+import os
 
 def train_and_predict_with_cv(
     X, y, X_test, lgb_params, n_splits=5, seed=42, shuffle=True,
@@ -64,5 +68,41 @@ def train_and_predict_with_cv(
     overall_logloss = log_loss(y, oof_preds)
     logger.info(f"Overall AUC: {overall_auc:.4f}")
     logger.info(f"Overall {loss}: {overall_logloss:.4f}")
+
+    now = datetime.now().strftime('%Y-%m-%d-%H-%M')
+    roc_curve_file = f'results_fig/roc_curve_{now}.png'
+    feature_importances_file = f'results_fig/feature_importances_{now}.png'
+    os.makedirs('results_fig', exist_ok=True)
+
+    # Compute ROC curve
+    fpr, tpr, thresholds = roc_curve(y_val, val_preds)
+
+    # Plot ROC curve
+    plt.figure(figsize=(8,6))
+    plt.plot(fpr, tpr, color='darkorange', lw=2, label='Validation ROC curve (area = %0.4f)' % overall_auc)
+    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver Operating Characteristic')
+    plt.legend(loc="lower right")
+    plt.tight_layout()
+    plt.savefig(roc_curve_file)
+
+    # Feature importance
+    importances = model.feature_importance()
+    feature_names = X_train.columns
+    feature_importances = pd.DataFrame({'feature': feature_names, 'importance': importances})
+    feature_importances.sort_values('importance', ascending=False, inplace=True)
+    num_features = len(feature_names)
+
+    # Plot feature importance
+    plt.figure(figsize=(10,12))
+    plt.barh(feature_importances['feature'].iloc[:num_features][::-1], feature_importances['importance'].iloc[:50][::-1], color='steelblue')
+    plt.xlabel('Importance')
+    plt.title('Top Feature Importances')
+    plt.tight_layout()
+    plt.savefig(feature_importances_file)
 
     return models, oof_preds, test_preds, overall_auc, overall_logloss
