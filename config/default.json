@@ -4,7 +4,10 @@
     "AMT_INCOME_TOTAL", 
     "EXT_SOURCE_2", 
     "OWN_CAR_AGE", 
-    "ORGANIZATION_TYPE"
+    "ORGANIZATION_TYPE",
+    "DAYS_EMPLOYED",
+    "FLAG_OWN_CAR",
+    "FLAG_OWN_REALTY"
   ],
   "lgbm_params": {
     "learning_rate": 0.1,

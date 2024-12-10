@@ -1,0 +1,7 @@
+2024-12-07 09:42:27,290 - INFO - Using features: ['NAME_CONTRACT_TYPE', 'AMT_INCOME_TOTAL', 'EXT_SOURCE_2', 'OWN_CAR_AGE', 'ORGANIZATION_TYPE']
+2024-12-07 09:42:27,294 - INFO - Train shape: (171202, 51), Test shape: (61500, 50)
+2024-12-07 09:42:27,296 - INFO - LGBM params: {'learning_rate': 0.1, 'num_leaves': 8, 'boosting_type': 'gbdt', 'colsample_bytree': 0.65, 'reg_alpha': 1, 'reg_lambda': 1, 'objective': 'binary'}
+2024-12-07 09:43:00,750 - INFO - Overall AUC: 0.6765
+2024-12-07 09:43:00,753 - INFO - Overall binary_logloss: 0.2649
+2024-12-07 09:43:01,278 - INFO - Submission saved to data/output/submission_2024-12-07-09-43.csv
+2024-12-07 09:43:01,281 - INFO - Logs saved to logs/log_2024-12-07-09-42.log

@@ -1,0 +1,24 @@
+2024-12-07 09:47:19,374 - INFO - Using features: ['NAME_CONTRACT_TYPE', 'AMT_INCOME_TOTAL', 'EXT_SOURCE_2', 'OWN_CAR_AGE', 'ORGANIZATION_TYPE']
+2024-12-07 09:47:19,378 - INFO - Train shape: (171202, 51), Test shape: (61500, 50)
+2024-12-07 09:47:19,380 - INFO - LGBM params: {'learning_rate': 0.1, 'num_leaves': 8, 'boosting_type': 'gbdt', 'colsample_bytree': 0.65, 'reg_alpha': 1, 'reg_lambda': 1, 'objective': 'binary'}
+2024-12-07 09:47:19,709 - INFO - Fold 1
+2024-12-07 09:47:27,353 - INFO - Fold 1 AUC: 0.6777
+2024-12-07 09:47:27,361 - INFO - Fold 1 binary_logloss: 0.2643
+2024-12-07 09:47:27,368 - INFO - Fold 2
+2024-12-07 09:47:34,248 - INFO - Fold 2 AUC: 0.6739
+2024-12-07 09:47:34,250 - INFO - Fold 2 binary_logloss: 0.2657
+2024-12-07 09:47:34,255 - INFO - Fold 3
+2024-12-07 09:47:42,449 - INFO - Fold 3 AUC: 0.6756
+2024-12-07 09:47:42,451 - INFO - Fold 3 binary_logloss: 0.2647
+2024-12-07 09:47:42,457 - INFO - Fold 4
+2024-12-07 09:47:48,989 - INFO - Fold 4 AUC: 0.6751
+2024-12-07 09:47:48,990 - INFO - Fold 4 binary_logloss: 0.2653
+2024-12-07 09:47:48,994 - INFO - Fold 5
+2024-12-07 09:47:58,533 - INFO - Fold 5 AUC: 0.6808
+2024-12-07 09:47:58,536 - INFO - Fold 5 binary_logloss: 0.2644
+2024-12-07 09:47:58,728 - INFO - Overall AUC: 0.6765
+2024-12-07 09:47:58,730 - INFO - Overall binary_logloss: 0.2649
+2024-12-07 09:47:58,732 - INFO - Overall AUC: 0.6765
+2024-12-07 09:47:58,732 - INFO - Overall binary_logloss: 0.2649
+2024-12-07 09:47:59,402 - INFO - Submission saved to data/output/submission_2024-12-07-09-47.csv
+2024-12-07 09:47:59,403 - INFO - Logs saved to logs/log_2024-12-07-09-47.log

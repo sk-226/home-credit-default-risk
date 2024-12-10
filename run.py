@@ -5,6 +5,7 @@ from datetime import datetime
 
 from utils.logger import get_logger
 from models.lightgbm_model import train_and_predict_with_cv
+from scripts import data_cleaning
 
 if __name__ == '__main__':
     # ロガー準備
@@ -26,6 +27,11 @@ if __name__ == '__main__':
     test_path = 'data/input/test.csv'
     train = pd.read_csv(train_path)
     test = pd.read_csv(test_path)
+
+    # 前処理
+    data_cleaning.clean(train)
+    data_cleaning.clean(test)
+    logger.info("Data cleaned")
 
     # ログ出力
     logger.info(f"Using features: {features}")
