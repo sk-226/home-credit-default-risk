@@ -9,7 +9,17 @@
     "ORGANIZATION_TYPE",
     "DAYS_EMPLOYED",
     "FLAG_OWN_CAR",
-    "FLAG_OWN_REALTY"
+    "FLAG_OWN_REALTY",
+    "CREDIT_INCOME_RATIO",
+    "ANNUITY_INCOME_RATIO",
+    "INCOME_PER_CHILD",
+    "INCOME_PER_FAM_MEMBER",
+    "CREDIT_TERM",
+    "DAYS_EMPLOYED_PERC",
+    "DAYS_REGISTRATION_PERC",
+    "DAYS_ID_PUBLISH_PERC",
+    "AGE_IN_YEARS",
+    "YEARS_EMPLOYED"
   ],
   "lgbm_params": {
     "learning_rate": 0.1,
