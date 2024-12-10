@@ -1,8 +1,10 @@
 {
   "features": [
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
     "NAME_CONTRACT_TYPE", 
     "AMT_INCOME_TOTAL", 
-    "EXT_SOURCE_2", 
     "OWN_CAR_AGE", 
     "ORGANIZATION_TYPE",
     "DAYS_EMPLOYED",
