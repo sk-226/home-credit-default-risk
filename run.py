@@ -2,10 +2,11 @@ import os
 import json
 import pandas as pd
 from datetime import datetime
+from sklearn.preprocessing import StandardScaler 
 
 from utils.logger import get_logger
 from models.lightgbm_model import train_and_predict_with_cv
-from scripts import data_cleaning
+from scripts import data_cleaning, generate_basic_features
 
 if __name__ == '__main__':
     # ロガー準備
@@ -28,6 +29,12 @@ if __name__ == '__main__':
     train = pd.read_csv(train_path)
     test = pd.read_csv(test_path)
 
+    # 特徴量エンジニアリングで作った特徴量をgenerate
+    train = generate_basic_features.generate_basic_features(train)
+    test = generate_basic_features.generate_basic_features(test)
+    # generate_basic_features(train)
+    # generate_basic_features(test)
+
     # 前処理
     data_cleaning.clean(train)
     data_cleaning.clean(test)
@@ -43,6 +50,11 @@ if __name__ == '__main__':
     X = train[features]
     y = train[target_name].values
     X_test = test[features]
+
+    # # 標準化
+    # scaler = StandardScaler()
+    # X = scaler.fit_transform(X)
+    # X_test = scaler.transform(X_test)
 
     # CV学習・予測
     models, oof_preds, test_preds, overall_auc, overall_logloss = train_and_predict_with_cv(
