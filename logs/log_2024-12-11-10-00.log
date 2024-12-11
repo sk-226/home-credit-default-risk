@@ -1,0 +1,23 @@
+2024-12-11 10:00:10,988 - INFO - Data cleaned
+2024-12-11 10:00:10,989 - INFO - Using features: ['EXT_SOURCE_1', 'EXT_SOURCE_2', 'EXT_SOURCE_3', 'NAME_CONTRACT_TYPE', 'AMT_INCOME_TOTAL', 'OWN_CAR_AGE', 'ORGANIZATION_TYPE', 'DAYS_EMPLOYED', 'CREDIT_INCOME_RATIO', 'ANNUITY_INCOME_RATIO', 'INCOME_PER_CHILD', 'INCOME_PER_FAM_MEMBER', 'CREDIT_TERM', 'DAYS_EMPLOYED_PERC', 'DAYS_REGISTRATION_PERC', 'DAYS_ID_PUBLISH_PERC', 'AGE_IN_YEARS', 'YEARS_EMPLOYED']
+2024-12-11 10:00:10,989 - INFO - Train shape: (171202, 61), Test shape: (61500, 60)
+2024-12-11 10:00:10,989 - INFO - LGBM params: {'learning_rate': 0.1, 'num_leaves': 8, 'boosting_type': 'gbdt', 'colsample_bytree': 0.65, 'reg_alpha': 1, 'reg_lambda': 1, 'objective': 'binary'}
+2024-12-11 10:00:11,090 - INFO - Fold 1
+2024-12-11 10:00:15,159 - INFO - Fold 1 AUC: 0.7474
+2024-12-11 10:00:15,160 - INFO - Fold 1 binary_logloss: 0.2486
+2024-12-11 10:00:15,161 - INFO - Fold 2
+2024-12-11 10:00:20,814 - INFO - Fold 2 AUC: 0.7505
+2024-12-11 10:00:20,815 - INFO - Fold 2 binary_logloss: 0.2491
+2024-12-11 10:00:20,819 - INFO - Fold 3
+2024-12-11 10:00:25,528 - INFO - Fold 3 AUC: 0.7542
+2024-12-11 10:00:25,529 - INFO - Fold 3 binary_logloss: 0.2469
+2024-12-11 10:00:25,531 - INFO - Fold 4
+2024-12-11 10:00:30,655 - INFO - Fold 4 AUC: 0.7463
+2024-12-11 10:00:30,658 - INFO - Fold 4 binary_logloss: 0.2496
+2024-12-11 10:00:30,661 - INFO - Fold 5
+2024-12-11 10:00:35,703 - INFO - Fold 5 AUC: 0.7478
+2024-12-11 10:00:35,704 - INFO - Fold 5 binary_logloss: 0.2492
+2024-12-11 10:00:35,769 - INFO - Overall AUC: 0.7492
+2024-12-11 10:00:35,769 - INFO - Overall binary_logloss: 0.2487
+2024-12-11 10:00:36,462 - INFO - Submission saved to data/output/submission_2024-12-11-10-00.csv
+2024-12-11 10:00:36,463 - INFO - Logs saved to logs/log_2024-12-11-10-00.log
