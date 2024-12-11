@@ -23,7 +23,8 @@
     "DEF_30_CNT_SOCIAL_CIRCLE",
     "AMT_GOODS_PRICE",
     "REGION_RATING_CLIENT",
-    "REGION_RATING_CLIENT_W_CITY"
+    "REGION_RATING_CLIENT_W_CITY",
+    "REGION_POPULATION_RELATIVE"
   ],
   "lgbm_params": {
     "learning_rate": 0.1,
