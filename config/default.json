@@ -25,7 +25,8 @@
     "REGION_RATING_CLIENT",
     "REGION_RATING_CLIENT_W_CITY",
     "REGION_POPULATION_RELATIVE",
-    "NAME_INCOME_TYPE"
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE"
   ],
   "lgbm_params": {
     "learning_rate": 0.1,
