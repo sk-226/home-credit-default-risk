@@ -29,7 +29,7 @@ if __name__ == '__main__':
     lgbm_params = config["lgbm_params"]
     xgb_params = config["xgb_params"]
     # rf_params = config["rf_params"]
-    # mlp_params = config["mlp_params"]
+    mlp_params = config["mlp_params"]
     # lr_params = config["lr_params"]
 
     target_name = config["target_name"]
@@ -63,7 +63,7 @@ if __name__ == '__main__':
     logger.info(f"LGBM params: {lgbm_params}")
     logger.info(f"XGB params: {xgb_params}")
     # logger.info(f"RF params: {rf_params}")
-    # logger.info(f"MLP params: {mlp_params}")
+    logger.info(f"MLP params: {mlp_params}")
     # logger.info(f"LR params: {lr_params}")
 
     # 学習用データ作成
@@ -77,6 +77,10 @@ if __name__ == '__main__':
     # X = scaler.fit_transform(X)
     # X_test = scaler.transform(X_test)
 
+    # MLP
+    mlp_models, mlp_oof, mlp_test, mlp_auc, mlp_logloss = mlp_train_cv(
+        X=X, y=y, X_test=X_test, mlp_params=mlp_params, n_splits=5, seed=42, shuffle=True, logger=logger
+    )
     # XGBoost
     xgb_models, xgb_oof, xgb_test, xgb_auc, xgb_logloss = xgb_train_cv(
         X=X, y=y, X_test=X_test, xgb_params=xgb_params, n_splits=5, seed=42, shuffle=True, logger=logger
@@ -93,10 +97,6 @@ if __name__ == '__main__':
     #     X=X, y=y, X_test=X_test, rf_params=rf_params, n_splits=5, seed=42, shuffle=True, logger=logger
     # )
 
-    # # MLP
-    # mlp_models, mlp_oof, mlp_test, mlp_auc, mlp_logloss = mlp_train_cv(
-    #     X=X, y=y, X_test=X_test, mlp_params=mlp_params, n_splits=5, seed=42, shuffle=True, logger=logger
-    # )
 
     # # Logistic Regression
     # lr_models, lr_oof, lr_test, lr_auc, lr_logloss = lr_train_cv(
@@ -106,8 +106,8 @@ if __name__ == '__main__':
     # アンサンブル: 簡易的には複数モデルの平均を取る
     # ensemble_oof = (lgb_oof + xgb_oof + rf_oof + mlp_oof + lr_oof) / 5
     # ensemble_test = (lgb_test + xgb_test + rf_test + mlp_test + lr_test) / 5
-    ensemble_oof = (lgb_oof + xgb_oof) / 2
-    ensemble_test = (lgb_test + xgb_test) / 2
+    ensemble_oof = (lgb_oof + xgb_oof + mlp_oof) / 3
+    ensemble_test = (lgb_test + xgb_test + mlp_oof) / 3
 
     # アンサンブルスコア計算
     ensemble_auc = roc_auc_score(y, ensemble_oof)
