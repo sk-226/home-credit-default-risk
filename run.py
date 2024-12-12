@@ -54,8 +54,8 @@ if __name__ == '__main__':
     logger.info("Data cleaned")
 
     # 欠損値補完
-    train = basic_impute(train)
-    test = basic_impute(test)
+    # train = basic_impute(train)
+    # test = basic_impute(test)
 
     # ログ出力
     logger.info(f"Using features: {features}")
