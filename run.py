@@ -5,6 +5,7 @@ from datetime import datetime
 from sklearn.preprocessing import StandardScaler 
 
 from utils.logger import get_logger
+from utils.basic_imputer import basic_impute
 # from models.lightgbm_model import train_and_predict_with_cv
 from models.lightgbm_model import train_and_predict_with_cv as lgb_train_cv
 from models.xgboost_model import train_and_predict_with_cv as xgb_train_cv
@@ -51,6 +52,10 @@ if __name__ == '__main__':
     data_cleaning.clean(train)
     data_cleaning.clean(test)
     logger.info("Data cleaned")
+
+    # 欠損値補完
+    train = basic_impute(train)
+    test = basic_impute(test)
 
     # ログ出力
     logger.info(f"Using features: {features}")

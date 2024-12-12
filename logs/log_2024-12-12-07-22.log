@@ -1,0 +1,43 @@
+2024-12-12 07:22:10,683 - INFO - Data cleaned
+2024-12-12 07:22:19,645 - INFO - Using features: ['EXT_SOURCE_1', 'EXT_SOURCE_2', 'EXT_SOURCE_3', 'NAME_CONTRACT_TYPE', 'AMT_INCOME_TOTAL', 'OWN_CAR_AGE', 'ORGANIZATION_TYPE', 'DAYS_EMPLOYED', 'CREDIT_INCOME_RATIO', 'ANNUITY_INCOME_RATIO', 'INCOME_PER_CHILD', 'INCOME_PER_FAM_MEMBER', 'CREDIT_TERM', 'DAYS_EMPLOYED_PERC', 'DAYS_REGISTRATION_PERC', 'DAYS_ID_PUBLISH_PERC', 'AGE_IN_YEARS', 'YEARS_EMPLOYED', 'DAYS_LAST_PHONE_CHANGE', 'DEF_60_CNT_SOCIAL_CIRCLE', 'DEF_30_CNT_SOCIAL_CIRCLE', 'AMT_GOODS_PRICE', 'REGION_RATING_CLIENT', 'REGION_RATING_CLIENT_W_CITY', 'REGION_POPULATION_RELATIVE', 'NAME_INCOME_TYPE', 'NAME_EDUCATION_TYPE', 'NAME_FAMILY_STATUS', 'OCCUPATION_TYPE']
+2024-12-12 07:22:19,649 - INFO - Train shape: (171202, 61), Test shape: (61500, 60)
+2024-12-12 07:22:19,651 - INFO - LGBM params: {'learning_rate': 0.1, 'num_leaves': 8, 'boosting_type': 'gbdt', 'colsample_bytree': 0.65, 'reg_alpha': 1, 'reg_lambda': 1, 'objective': 'binary'}
+2024-12-12 07:22:19,652 - INFO - XGB params: {'learning_rate': 0.1, 'max_depth': 6, 'n_estimators': 500, 'colsample_bytree': 0.8, 'subsample': 0.8, 'objective': 'binary:logistic', 'use_label_encoder': False, 'eval_metric': 'logloss', 'enable_categorical': True, 'tree_method': 'hist'}
+2024-12-12 07:22:20,081 - INFO - [XGB] Fold 1
+2024-12-12 07:22:30,770 - INFO - [XGB] Fold 1 AUC: 0.7476
+2024-12-12 07:22:30,771 - INFO - [XGB] Fold 1 Logloss: 0.2491
+2024-12-12 07:22:30,775 - INFO - [XGB] Fold 2
+2024-12-12 07:22:41,775 - INFO - [XGB] Fold 2 AUC: 0.7517
+2024-12-12 07:22:41,778 - INFO - [XGB] Fold 2 Logloss: 0.2492
+2024-12-12 07:22:41,793 - INFO - [XGB] Fold 3
+2024-12-12 07:22:55,221 - INFO - [XGB] Fold 3 AUC: 0.7551
+2024-12-12 07:22:55,222 - INFO - [XGB] Fold 3 Logloss: 0.2466
+2024-12-12 07:22:55,227 - INFO - [XGB] Fold 4
+2024-12-12 07:23:08,898 - INFO - [XGB] Fold 4 AUC: 0.7485
+2024-12-12 07:23:08,900 - INFO - [XGB] Fold 4 Logloss: 0.2493
+2024-12-12 07:23:08,905 - INFO - [XGB] Fold 5
+2024-12-12 07:23:20,242 - INFO - [XGB] Fold 5 AUC: 0.7523
+2024-12-12 07:23:20,244 - INFO - [XGB] Fold 5 Logloss: 0.2483
+2024-12-12 07:23:20,423 - INFO - [XGB] Overall AUC: 0.7510
+2024-12-12 07:23:20,423 - INFO - [XGB] Overall Logloss: 0.2485
+2024-12-12 07:23:20,455 - INFO - Fold 1
+2024-12-12 07:23:33,347 - INFO - Fold 1 AUC: 0.7532
+2024-12-12 07:23:33,349 - INFO - Fold 1 binary_logloss: 0.2473
+2024-12-12 07:23:33,353 - INFO - Fold 2
+2024-12-12 07:23:42,867 - INFO - Fold 2 AUC: 0.7557
+2024-12-12 07:23:42,869 - INFO - Fold 2 binary_logloss: 0.2481
+2024-12-12 07:23:42,876 - INFO - Fold 3
+2024-12-12 07:23:52,008 - INFO - Fold 3 AUC: 0.7595
+2024-12-12 07:23:52,021 - INFO - Fold 3 binary_logloss: 0.2453
+2024-12-12 07:23:52,028 - INFO - Fold 4
+2024-12-12 07:23:59,700 - INFO - Fold 4 AUC: 0.7510
+2024-12-12 07:23:59,701 - INFO - Fold 4 binary_logloss: 0.2484
+2024-12-12 07:23:59,705 - INFO - Fold 5
+2024-12-12 07:24:10,073 - INFO - Fold 5 AUC: 0.7571
+2024-12-12 07:24:10,074 - INFO - Fold 5 binary_logloss: 0.2468
+2024-12-12 07:24:10,244 - INFO - Overall AUC: 0.7553
+2024-12-12 07:24:10,245 - INFO - Overall binary_logloss: 0.2472
+2024-12-12 07:24:11,683 - INFO - Ensemble Overall AUC: 0.7556
+2024-12-12 07:24:11,683 - INFO - Ensemble Overall Logloss: 0.2471
+2024-12-12 07:24:11,938 - INFO - Ensemble Submission saved to data/output/submission_ensemble_2024-12-12-07-24.csv
+2024-12-12 07:24:11,938 - INFO - Logs saved to logs/log_2024-12-12-07-22.log
